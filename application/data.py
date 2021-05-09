@@ -7,7 +7,7 @@ def get_raw(source):
     return result
 
 def save_pure_data(data):
-    with open("data/phonebook_pure.csv", "w", newline='') as f:
+    with open("data/phonebook_pure.csv", "w", encoding='utf-8', newline='') as f:
         writer = csv.writer(f, delimiter=',')
         writer.writerows(data)
 
