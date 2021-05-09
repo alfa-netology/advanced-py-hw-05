@@ -3,7 +3,6 @@ import re
 PHONE_SEARCH_PATTERN = r'(\+7|8)*[\s\(]*(\d{3})[\)\s-]*(\d{3})[-]*(\d{2})[-]*(\d{2})[\s\(]*(доб\.\s\d+)*[\)]*'
 PHONE_SUB_PATTERN = r'+7(\2)-\3-\4-\5 \6'
 
-
 def raw_data(data):
     result = list()
     for row in data:
@@ -21,12 +20,6 @@ def raw_data(data):
         result.append(record)
     return result
 
-def merge_doubles(record_one, record_two):
-    result = []
-    for index in range(len(record_one)):
-        result.append(record_one[index]) if record_one[index] else result.append(record_two[index])
-    return result
-
 def make_pure_contact_list(data):
     result = dict()
     for item in data:
@@ -38,3 +31,8 @@ def make_pure_contact_list(data):
             result[key] = item
     return result.values()
 
+def merge_doubles(record_one, record_two):
+    result = []
+    for index in range(len(record_one)):
+        result.append(record_one[index]) if record_one[index] else result.append(record_two[index])
+    return result

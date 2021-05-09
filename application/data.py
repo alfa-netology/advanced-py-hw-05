@@ -7,7 +7,6 @@ def get_raw(raw_data_path):
     return result
 
 def save_pure(data, pure_data_path):
-    with open(pure_data_path, "w", encoding='utf-8', newline='') as f:
-        writer = csv.writer(f, delimiter=',')
+    with open(pure_data_path, "w", encoding='utf-8', newline='') as file:
+        writer = csv.writer(file, delimiter=',')
         writer.writerows(data)
-
