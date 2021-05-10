@@ -7,11 +7,8 @@ def process_raw_data(data):
     result = list()
     for row in data:
         record = list()
-
         full_name = re.findall(r'(\w+)', ' '.join(row[:3]))
-        if len(full_name) < 3:
-            full_name.append('')
-
+        full_name.append('') if len(full_name) < 3 else ...
         record += full_name
         record.append(row[3])
         record.append(row[4])
