@@ -23,8 +23,7 @@ def process_raw_data(data):
 def make_pure_contact_list(data):
     result = dict()
     for item in data:
-        key = item[0]
-        result[key] = merge_doubles(item, result[key]) if key in result else item
+        result[item[0]] = merge_doubles(item, result[item[0]]) if item[0] in result else item
     return result.values()
 
 def merge_doubles(record_one, record_two):
