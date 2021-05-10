@@ -3,7 +3,7 @@ import re
 PHONE_SEARCH_PATTERN = r'(\+7|8)*[\s\(]*(\d{3})[\)\s-]*(\d{3})[-]*(\d{2})[-]*(\d{2})[\s\(]*(доб\.\s\d+)*[\)]*'
 PHONE_SUB_PATTERN = r'+7(\2)-\3-\4-\5 \6'
 
-def raw_data(data):
+def process_raw_data(data):
     result = list()
     for row in data:
         record = list()
