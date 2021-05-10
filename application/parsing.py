@@ -24,11 +24,7 @@ def make_pure_contact_list(data):
     result = dict()
     for item in data:
         key = item[0]
-        if key in result:
-            record = merge_doubles(item, result[key])
-            result[key] = record
-        else:
-            result[key] = item
+        result[key] = merge_doubles(item, result[key]) if key in result else item
     return result.values()
 
 def merge_doubles(record_one, record_two):
