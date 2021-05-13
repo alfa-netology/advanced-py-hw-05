@@ -6,7 +6,7 @@ PHONE_SUB_PATTERN = r'+7(\2)-\3-\4-\5 \6\7'
 def process_raw_data(data):
     result = list()
     for row in data:
-        record = list()
+        record = []
         full_name = re.findall(r'(\w+)', ' '.join(row[:3]))
         full_name.append('') if len(full_name) < 3 else ...
         record += full_name
