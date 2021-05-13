@@ -6,7 +6,7 @@ PHONE_SUB_PATTERN = r'+7(\2)-\3-\4-\5 \6\7'
 def process_raw_data(data):
     result = list()
     for row in data:
-        record = []
+        record = list()
         full_name = re.findall(r'(\w+)', ' '.join(row[:3]))
         full_name.append('') if len(full_name) < 3 else ...
         record += full_name
@@ -24,7 +24,7 @@ def make_pure_contact_list(data):
     return result.values()
 
 def merge_doubles(record_one, record_two):
-    result = []
+    result = list()
     for index in range(len(record_one)):
         result.append(record_one[index]) if record_one[index] else result.append(record_two[index])
     return result
